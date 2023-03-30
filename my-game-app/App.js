@@ -8,7 +8,7 @@ export default function App() {
     // <LinearGradient color={['#4e0329','#ddb52f']} style={styles.rootScreen}>
     <View style={styles.rootScreen}>
       <ImageBackground
-        source={require("./assets/dice1.jpg")}
+        source={require("./assets/sprint1.jpg")}
         resizeMode="cover"
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}
