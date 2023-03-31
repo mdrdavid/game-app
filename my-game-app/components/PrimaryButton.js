@@ -1,8 +1,8 @@
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
-function PrimaryButton({ children }) {
+function PrimaryButton({ children, onPress }) {
   function pressHandler() {
-    console.log("Pressed");
+    onPress;
   }
   return (
     <View style={styles.buttonOuterContainer}>
