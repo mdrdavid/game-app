@@ -4,6 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
+import Colors from "./constants/colors";
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();
@@ -16,7 +17,7 @@ export default function App() {
     screen = <GameScreen />;
   }
   return (
-    // <LinearGradient color={['#4e0329','#ddb52f']} style={styles.rootScreen}>
+    // <LinearGradient color={[Colors.Primary700,Colors.accent500]} style={styles.rootScreen}>
     <View style={styles.rootScreen}>
       <ImageBackground
         source={require("./assets/sprint1.jpg")}
@@ -24,9 +25,7 @@ export default function App() {
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}
       >
-        <SafeAreaView style={styles.safeAreaView}>
-        {screen}
-        </SafeAreaView>
+        <SafeAreaView style={styles.safeAreaView}>{screen}</SafeAreaView>
       </ImageBackground>
     </View>
     //  </LinearGradient>
