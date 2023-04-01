@@ -24,7 +24,7 @@ export default function App() {
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}
       >
-        <SafeAreaView style={styles.rootScreen}>
+        <SafeAreaView style={styles.safeAreaView}>
         {screen}
         </SafeAreaView>
       </ImageBackground>
@@ -40,5 +40,9 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     opacity: 0.15,
+  },
+  safeAreaView: {
+    flex: 1,
+    padding: 16, // Adjust the padding as per your requirement
   },
 });
