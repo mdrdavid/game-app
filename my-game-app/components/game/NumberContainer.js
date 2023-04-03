@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   numberText: {
-    color: Colors.accent500,
+    // color: Colors.accent500,
+    color: "white",
     fontWeight: "bold",
     fontSize: 36,
   },
