@@ -48,10 +48,10 @@ export default function GameScreen({ userNumber }) {
         <Text>Higher or lower</Text>
         <View>
           <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-            +
+            -
           </PrimaryButton>
           <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-            -
+            +
           </PrimaryButton>
         </View>
       </View>
