@@ -59,17 +59,23 @@ export default function GameScreen({ userNumber, onGameOver }) {
       <Title>Opponent's Guess</Title>
       {/* GUESS Number*/}
       <NumberContainer>{currentGuess}</NumberContainer>
-      <View>
-        <InstructionTitle>Higher or lower</InstructionTitle>
-        <Card>
-          <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-            -
-          </PrimaryButton>
-          <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-            +
-          </PrimaryButton>
-        </Card>
-      </View>
+      <Card>
+        <InstructionTitle style={styles.InstructionText}>
+          Higher or lower
+        </InstructionTitle>
+        <View style={styles.buttonsContainer}>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
+              -
+            </PrimaryButton>
+          </View>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
+              +
+            </PrimaryButton>
+          </View>
+        </View>
+      </Card>
       <View>
         <Text>Log Rounds</Text>
       </View>
@@ -82,13 +88,13 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 24,
   },
-  // title: {
-  //   fontSize: 24,
-  //   fontWeight: "bold",
-  //   color: "#ddb52f",
-  //   textAlign: "center",
-  //   borderWidth: 2,
-  //   borderColor: "#ddb52f",
-  //   padding: 12,
-  // },
+  InstructionText: {
+    marginBottom: 12,
+  },
+  buttonsContainer: {
+    flexDirection: "row",
+  },
+  buttonContainer: {
+    flex: 1,
+  },
 });
