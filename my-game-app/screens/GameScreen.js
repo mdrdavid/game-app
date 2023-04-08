@@ -86,9 +86,14 @@ export default function GameScreen({ userNumber, onGameOver }) {
       </Card>
       <View>
         {/* log guess rounds to the screen */}
-        {guessRounds.map((guessRound) => (
+        {/* {guessRounds.map((guessRound) => (
           <Text key={guessRound}>{guessRound}</Text>
-        ))}
+        ))} */}
+        <FlatList
+          data={guessRounds}
+          renderItem={(itemData) => <Text>{itemData.item}</Text>}
+          keyExtractor={(item)=>item} // set a unique key to each item
+        />
       </View>
     </View>
   );
