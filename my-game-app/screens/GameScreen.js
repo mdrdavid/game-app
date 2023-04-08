@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, Alert } from "react-native";
+import { View, Text, StyleSheet, Alert, FlatList } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Title from "../components/UI/Title";
 import Card from "../components/UI/Card";
@@ -23,6 +23,7 @@ let maxBoundary = 100;
 export default function GameScreen({ userNumber, onGameOver }) {
   const initialGuess = generateRandomBetween(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
+  const [guessRounds, setGuessRounds] = useState([initialGuess]);
 
   // to render when the game is over
   useEffect(() => {
@@ -58,6 +59,7 @@ export default function GameScreen({ userNumber, onGameOver }) {
       currentGuess
     );
     setCurrentGuess(newRndNumber);
+    setGuessRounds((prevGuessRounds) => [newRndNumber, ...prevGuessRounds]); // set array of guessed numbers with the latest guess on top
   }
 
   return (
@@ -83,7 +85,10 @@ export default function GameScreen({ userNumber, onGameOver }) {
         </View>
       </Card>
       <View>
-        <Text>Log Rounds</Text>
+        {/* log guess rounds to the screen */}
+        {guessRounds.map((guessRound) => (
+          <Text key={guessRound}>{guessRound}</Text>
+        ))}
       </View>
     </View>
   );
