@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flexDirection: "row",
   },
-  buttonsContainerWide:{
+  buttonsContainerWide: {
     flexDirection: "row",
     alignItems: "center",
   },
