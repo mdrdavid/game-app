@@ -8,14 +8,14 @@ import {
   Dimensions,
   useWindowDimensions,
 } from "react-native";
-import Title from "../components/UI/Title";
+import Title from "../components/UI/Title.ios";
 import PrimaryButton from "../components/UI/PrimaryButton";
 import Colors from "../constants/colors";
 
 function GameOverScreen({ roundsNumber, userNumber, onStartNewGame }) {
   const { width, height } = useWindowDimensions();
 
-  let imageSize = 380;
+  let imageSize = 300;
 
   if (width < 380) {
     imageSize = 150;
